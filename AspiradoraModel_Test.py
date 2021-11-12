@@ -1,3 +1,8 @@
+'''
+Archivo para las pruebas del modelo utilizando los agentes Aspiradora y CeldaSucia
+'''
+
+
 import time
 from AspiradoraModel import AspiradoraModel
 from CeldaSuciaAgent import CeldaSuciaAgent

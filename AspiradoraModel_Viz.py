@@ -1,3 +1,8 @@
+'''
+Archivo para la visualización del modelo de forma gráfica en un servidor web
+'''
+
+
 from AspiradoraModel import *
 from mesa.visualization.modules import CanvasGrid, ChartModule
 from mesa.visualization.ModularVisualization import ModularServer, VisualizationElement
