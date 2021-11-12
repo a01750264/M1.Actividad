@@ -1,8 +1,6 @@
 from mesa import Agent, Model
 from mesa.time import RandomActivation
 from mesa.space import MultiGrid
-from mesa.datacollection import DataCollector
-from mesa.batchrunner import BatchRunner
 from CeldaSuciaAgent import CeldaSuciaAgent
 
 
@@ -13,6 +11,7 @@ class AspiradoraAgent(Agent):
 
     def __init__(self, unique_id, model):
         super().__init__(unique_id, model)
+        self.pasos = 0
 
     def move(self):
         possible_steps = self.model.grid.get_neighborhood(
@@ -22,6 +21,8 @@ class AspiradoraAgent(Agent):
         )
         new_position = self.random.choice(possible_steps)
         self.model.grid.move_agent(self, new_position)
+        self.pasos += 1
+        print(self.pasos)
 
     def aspirar(self):
         cellmates = self.model.grid.get_cell_list_contents([self.pos])
@@ -74,15 +75,8 @@ class AspiradoraModel(Model):
 
             self.grid.place_agent(cs, (xs, ys))
 
-        '''
-        self.datacollector = DataCollector(
-
-        )
-        '''
-
     def step(self):
         '''
         Avanzar un paso en el modelo.
         '''
-        # self.datacollector.collect(self)
         self.schedule.step()

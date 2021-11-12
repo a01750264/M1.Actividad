@@ -1,5 +1,5 @@
 from AspiradoraModel import *
-from mesa.visualization.modules import CanvasGrid
+from mesa.visualization.modules import CanvasGrid, ChartModule
 from mesa.visualization.ModularVisualization import ModularServer, VisualizationElement
 from AspiradoraModel import AspiradoraModel, AspiradoraAgent
 from CeldaSuciaAgent import CeldaSuciaAgent
