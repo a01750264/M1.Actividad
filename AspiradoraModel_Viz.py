@@ -42,11 +42,11 @@ def aspecto_agentes(agente):
     return aspecto
 
 
-grid = CanvasGrid(aspecto_agentes, 10, 10, 500)
+grid = CanvasGrid(aspecto_agentes, 20, 20, 500)
 
 server = ModularServer(AspiradoraModel,
                        [grid],
                        'Aspiradora Model',
-                       {'agents': 10, 'sucias': 30, 'M': 10, 'N': 10})
+                       {'agents': 30, 'sucias': 50, 'M': 20, 'N': 20})
 server.port = 8521
 server.launch()
